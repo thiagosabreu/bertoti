@@ -86,24 +86,25 @@ class TestePetShop {
 ```
 ```bash
 
-+-------------------+        +-------------------+
-|       Pet         |        |     PetShop       |
-+-------------------+        +-------------------+
-| - nome: String    |        | - pets: List<Pet> |
-| - tipo: String    |        +-------------------+
-+-------------------+        | + cadastrarPet(pet: Pet)   |
-| + getNome(): String  |      | + buscarPetPorNome(nome: String): List<Pet> |
-| + setNome(nome: String)   | | + getPets(): List<Pet>    |
-| + getTipo(): String  |      +-------------------+
+
++-------------------------+             +---------------------------------------------+
+|          Pet            |             |               PetShop                       |
++-------------------------+             +---------------------------------------------+
+| - nome: String          |             | - pets: List<Pet>                           |
+| - tipo: String          |             +---------------------------------------------+
++-------------------------+             | + cadastrarPet(pet: Pet)                    |
+| + getNome(): String     |             | + buscarPetPorNome(nome: String): List<Pet> |
+| + setNome(nome: String) |             | + getPets(): List<Pet>                      |
+| + getTipo(): String     |             +---------------------------------------------+
 | + setTipo(tipo: String) |
-+-------------------+
-         ^
-         |
-         |
-         | 1
-     +------------+
-     | TestePetShop|
-     +------------+
-     | + test()    |
-     +------------+
++-------------------------+
+            ^
+            |
+            |
+            | 1
+     +--------------+
+     | TestePetShop |
+     +--------------+
+     | + test()     |
+     +--------------+
 ```
