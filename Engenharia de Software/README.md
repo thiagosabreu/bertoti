@@ -83,3 +83,25 @@ class TestePetShop {
         assertEquals(aguaPets.get(0).getTipo(), aguaComGas.getTipo());
     }
 }
+
++-------------------+        +-------------------+
+|       Pet         |        |     PetShop       |
++-------------------+        +-------------------+
+| - nome: String    |        | - pets: List<Pet> |
+| - tipo: String    |        +-------------------+
++-------------------+        | + cadastrarPet(pet: Pet)   |
+| + getNome(): String  |      | + buscarPetPorNome(nome: String): List<Pet> |
+| + setNome(nome: String)   | | + getPets(): List<Pet>    |
+| + getTipo(): String  |      +-------------------+
+| + setTipo(tipo: String) |
++-------------------+
+         ^
+         |
+         |
+         | 1
+     +------------+
+     | TestePetShop|
+     +------------+
+     | + test()    |
+     +------------+
+
