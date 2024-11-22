@@ -83,6 +83,8 @@ class TestePetShop {
         assertEquals(aguaPets.get(0).getTipo(), aguaComGas.getTipo());
     }
 }
+```
+```bash
 
 +-------------------+        +-------------------+
 |       Pet         |        |     PetShop       |
@@ -104,4 +106,4 @@ class TestePetShop {
      +------------+
      | + test()    |
      +------------+
-
+```
