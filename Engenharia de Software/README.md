@@ -4,9 +4,9 @@ Atividade 1: Comentário sobre trecho do livro "Software Engineering at Google" 
 As decisões precisam ser tomadas pensando no futuro, como seria a manutenção, se vale a pena, e quais são os riscos por exemplo.
 
 Atividade 2: Citar 3 trade-offs - 12/08/2024
-  1. Desempenho x Segurança
-  2. Facilidade de manutenção x Tempo de desenvolvimento
-  3. Qualidade x Velocidade
+  1. Desempenho x Segurança: Aumentar a segurança pode diminuir o desempenho, pois há mais verificações e criptografia a ser processada.
+  2. Facilidade de manutenção x Tempo de desenvolvimento: Criar um código mais fácil de manter pode exigir mais tempo de desenvolvimento inicialmente.
+  3. Qualidade x Velocidade: Focar na qualidade pode atrasar a entrega de um projeto, enquanto priorizar velocidade pode comprometer a qualidade final do produto.
 
 Atividade 3: Java - 19/09/2024
 ```bash
@@ -87,25 +87,17 @@ class TestePetShop {
 ```bash
 
 
-+-------------------------+             +---------------------------------------------+
-|          Pet            |             |               PetShop                       |
-+-------------------------+             +---------------------------------------------+
-| - nome: String          |             | - pets: List<Pet>                           |
-| - tipo: String          |             +---------------------------------------------+
-+-------------------------+             | + cadastrarPet(pet: Pet)                    |
++-------------------------+             +---------------------------------------------+                            +--------------+
+|          Pet            |             |               PetShop                       |                            | TestePetShop |
++-------------------------+ <---------- +---------------------------------------------+ <   -    -   -    -    -   +--------------+
+| - nome: String          |             | - pets: List<Pet>                           |                            | + test()     |
+| - tipo: String          |             +---------------------------------------------+                            +--------------+
++-------------------------+             | + cadastrarPet(pet: Pet)                    |              
 | + getNome(): String     |             | + buscarPetPorNome(nome: String): List<Pet> |
 | + setNome(nome: String) |             | + getPets(): List<Pet>                      |
 | + getTipo(): String     |             +---------------------------------------------+
 | + setTipo(tipo: String) |
 +-------------------------+
-            ^
-            |
-            |
-            | 1
-     +--------------+
-     | TestePetShop |
-     +--------------+
-     | + test()     |
-     +--------------+
+
 ```
 bot: https://github.com/thiagosabreu/TelegramChatBotWithOllama
