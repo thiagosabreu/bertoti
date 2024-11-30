@@ -108,3 +108,4 @@ class TestePetShop {
      | + test()     |
      +--------------+
 ```
+bot: https://github.com/thiagosabreu/TelegramChatBotWithOllama
