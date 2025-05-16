@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bertoti Sneakers - Catálogo de Tênis</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <h1>Bertoti<span>Sneakers</span></h1>
+        </div>
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="catalogo.html" class="active">Catálogo</a></li>
+            <li><a href="index.html">Área do Funcionário</a></li>
+            <li><a href="#" class="btn btn-sm">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Descubra o Melhor em Calçados</h2>
+      <p>Encontre os modelos mais exclusivos e confortáveis para seu estilo único</p>
+      <a href="#products" class="btn">Ver Coleção</a>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Coleção Atual</h2>
+      </div>
+      <div class="products-grid" id="catalog-container">
+        <div class="loading-spinner" id="loading-spinner">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Carregando produtos...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-truck"></i>
+          <h3>Entrega Rápida</h3>
+          <p>Receba seu tênis em até 48 horas em todo o Brasil</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Garantia de Qualidade</h3>
+          <p>Todos os produtos com garantia de 90 dias</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-exchange-alt"></i>
+          <h3>Troca Facilitada</h3>
+          <p>Não serviu? Troque em até 30 dias sem complicação</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>BertotiSneakers</h3>
+          <p>Sua loja de tênis premium com os melhores modelos e marcas do mercado.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="index.html">Área do Funcionário</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> FATEC São José dos Campos - Prof. Jessen Vidal - Sala 412</li>
+            <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+            <li><i class="fas fa-envelope"></i> contato@bertotisneakers.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 BertotiSneakers - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="catalog.js"></script>
+</body>
+
+</html>
