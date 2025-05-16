@@ -1,4 +1,4 @@
-# Repositório de Desenvolvimento - Materiais e Projetos do Professor Bertoti
+# Repositório de Desenvolvimento - Professor Bertoti
 
 Este repositório foi criado para o desenvolvimento e implementação dos projetos e materiais das matérias ministradas pelo professor Bertoti.
 
