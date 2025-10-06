@@ -137,7 +137,7 @@ Desafio proposto pela empresa Altave especializada em monitoramento inteligente 
 
 
 *Soft Skills:*  
-- Liderança – Coordenação de equipe como PO
+- Liderança – Coordenação de equipe como Scrum Master
   <details>
     Exerci o papel de Scrum Master no projeto, coordenando uma equipe de desenvolvedores. Facilitei as cerimônias ágeis (planning, daily, review e retrospective), removi impedimentos e garanti que a equipe estivesse alinhada aos objetivos do sprint. Incentivei a participação ativa de todos, promovendo engajamento, colaboração e aprendizado contínuo, além de assegurar a qualidade e cumprimento dos prazos.
   </details>
