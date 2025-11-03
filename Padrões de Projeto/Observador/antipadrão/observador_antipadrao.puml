@@ -1,0 +1,44 @@
+@startuml
+title ❌ Anti-Padrão Observer: Alto Acoplamento
+
+' Configuração de estilo
+skinparam class {
+  BorderColor #cc0000
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Classes de Observadores Concretos
+class EmailService {
+  -- Métodos --
+  + update(msg: String): void
+}
+
+class SmsService {
+  -- Métodos --
+  + update(msg: String): void
+}
+
+' 2. Sujeito Acoplado (NotifierBad)
+class NotifierBad {
+  -- Métodos --
+  + send(message: String): void
+}
+
+' 3. Cliente
+class Notificacao {
+    -- Métodos --
+    + main(args: String[]): void
+}
+
+' RELAÇÕES:
+
+' Acoplamento Alto (NotifierBad depende diretamente dos Observadores)
+NotifierBad .down.> EmailService
+NotifierBad .down.> SmsService
+
+' Dependência (Cliente usa o NotifierBad)
+Notificacao .right.> NotifierBad
+
+@enduml

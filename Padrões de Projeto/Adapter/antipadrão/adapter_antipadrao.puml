@@ -1,0 +1,57 @@
+@startuml
+' Removido o !theme toy para um visual mais neutro (sem cor de fundo)
+
+title Cenário Antí-Padrão - Falha de Acoplamento
+
+' Configuração para deixar o fundo das caixas branco (ou neutro)
+skinparam class {
+  BorderColor #4078c0
+  BackgroundColor white ' Fundo branco
+  AttributeFontColor black
+}
+skinparam interface {
+  BorderColor #6cc644
+  BackgroundColor white ' Fundo branco
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Interface (Target - Alvo)
+interface TomadaAmericana {
+  -- Métodos --
+  + conectarNaTomadaAmericana(): void
+}
+
+' 2. Classe Adaptada (Adaptee)
+class PlugEuropeu {
+  -- Métodos --
+  + conectarNaTomadaEuropeia(): void
+}
+
+' 3. Classe Adapter (A SOLUÇÃO correta - Contexto)
+class AdapterEuropeuParaAmericano {
+  -- Atributos --
+  - plug: PlugEuropeu
+  -- Métodos --
+  + conectarNaTomadaAmericana(): void
+}
+
+' 4. Classe Cliente (O PROBLEMA - Acoplamento incorreto)
+class MainErrado {
+    -- Métodos --
+    + main(args: String[]): void
+}
+
+' RELAÇÕES:
+
+' Implementação (Adapter implementa Target) - Linha tracejada com triângulo vazio
+AdapterEuropeuParaAmericano ..|> TomadaAmericana
+
+' Agregação 1:1 (Adapter contem o PlugEuropeu) - Losango Vazio (Agregação)
+AdapterEuropeuParaAmericano "1" o-- "1" PlugEuropeu
+
+' Dependência/Uso (MainErrado usa o Adaptado diretamente) - Linha tracejada com seta aberta
+' Ajuste a direção para melhorar a disposição visual
+MainErrado .right.> PlugEuropeu
+
+@enduml

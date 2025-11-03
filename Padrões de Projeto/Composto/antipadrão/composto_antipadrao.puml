@@ -1,0 +1,54 @@
+@startuml
+title ❌ Anti-Padrão Composite (Estrutura Confusa)
+
+' Configuração de estilo
+skinparam class {
+  BorderColor #cc0000
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Classes do Antipadrão
+class Menu {
+  -- Atributos --
+  # nome
+  # itens : List<Item>
+  -- Métodos --
+  + adicionar(item)
+}
+
+class PratoComposto {
+  -- Atributos --
+  # preco : float
+  -- Métodos --
+  + mostrar()
+}
+
+class Prato {
+  -- Atributos --
+  # nome
+  # preco : float
+  -- Métodos --
+  + mostrar()
+}
+
+class Restaurante {
+  -- Atributos --
+  # nome
+  -- Métodos --
+  + mostrar_exemplo_antipadrao()
+}
+
+' RELAÇÕES:
+
+' Herança (assumindo que PratoComposto herda de Menu)
+PratoComposto --|> Menu
+
+' Composição/Agregação de itens dentro de PratoComposto
+PratoComposto "1" *-- "*" Prato : contém
+
+' Dependência (Restaurante usa PratoComposto)
+Restaurante .right.> PratoComposto
+
+@enduml

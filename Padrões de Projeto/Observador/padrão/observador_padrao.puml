@@ -1,0 +1,67 @@
+@startuml
+title ✅ Padrão Observer (Baixo Acoplamento)
+
+' Configuração de estilo
+skinparam class {
+  BorderColor #006600
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam interface {
+  BorderColor #6cc644
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Interface do Observador
+interface Observer {
+  -- Métodos --
+  + update(message: String): void
+}
+
+' 2. Observadores Concretos (Implementam a Interface)
+class EmailService {
+  -- Métodos --
+  + update(msg: String): void
+}
+
+class SmsService {
+  -- Métodos --
+  + update(msg: String): void
+}
+
+' 3. Sujeito (Notifier)
+class Notifier {
+  -- Atributos --
+  - observers : List<Observer>
+  -- Métodos --
+  + subscribe(observer: Observer): void
+  + notifyAll(message: String): void
+}
+
+' 4. Cliente
+class Notificacao {
+    -- Métodos --
+    + main(args: String[]): void
+}
+
+' RELAÇÕES:
+
+' Implementação (Observadores Concretos implementam a Interface)
+EmailService ..|> Observer
+SmsService ..|> Observer
+
+' Composição/Agregação (Sujeito contém a lista de Observadores)
+' Um Notifier tem muitos Observers
+Notifier "1" *-- "*" Observer : lista
+
+' Dependência (O Notifier usa a interface Observer no seu método notifyAll)
+Notifier .down.> Observer
+
+' Dependência (Cliente usa o Notifier e os Serviços para se inscrever)
+Notificacao .up.> Notifier
+Notificacao .up.> EmailService
+Notificacao .up.> SmsService
+
+@enduml

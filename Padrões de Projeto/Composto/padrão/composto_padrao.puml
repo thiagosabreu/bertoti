@@ -1,0 +1,66 @@
+@startuml
+title ✅ Padrão Composite (Estrutura Correta)
+
+' Configuração de estilo
+skinparam class {
+  BorderColor #006600
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam interface {
+  BorderColor #6cc644
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Componente (Interface Abstrata)
+abstract class ItemCardapio {
+  -- Métodos Abstratos --
+  {abstract} + mostrar()
+}
+
+' 2. Folha (Leaf)
+class Prato {
+  -- Atributos --
+  - nome
+  - preco : float
+  -- Métodos --
+  + mostrar()
+}
+
+' 3. Composto (Composite)
+class Menu {
+  -- Atributos --
+  - nome
+  - itens : List<ItemCardapio>
+  -- Métodos --
+  + adicionar(item: ItemCardapio)
+  + mostrar()
+}
+
+' 4. Cliente (Client)
+class Restaurante {
+    -- Atributos --
+    - nome
+    - menu_principal : Menu
+    -- Métodos --
+    + adicionar_item(item: ItemCardapio)
+    + mostrar_cardapio()
+}
+
+' RELAÇÕES:
+
+' Implementação (Folha e Composto Implementam o Componente)
+Prato ..|> ItemCardapio
+Menu ..|> ItemCardapio
+
+' Composição (Composto Contém Componentes)
+' Um Menu tem muitos ItemCardapio (que podem ser Pratos ou outros Menus)
+Menu "1" *-- "*" ItemCardapio : contém
+
+' Dependência (Restaurante usa o Componente para adicionar e o Composite para mostrar)
+Restaurante .right.> ItemCardapio : usa
+Restaurante .right.> Menu : cria/usa
+
+@enduml

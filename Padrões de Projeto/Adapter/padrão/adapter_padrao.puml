@@ -1,0 +1,54 @@
+@startuml
+title Padrão Adapter Implementado (Adapter de Objeto) - Corrigido
+
+' Configuração de estilo (sem fundo)
+skinparam class {
+  BorderColor #4078c0
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam interface {
+  BorderColor #6cc644
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' 1. Interface (Target - Alvo)
+interface TomadaAmericana {
+  -- Métodos --
+  + conectarNaTomadaAmericana(): void
+}
+
+' 2. Classe Adaptada (Adaptee)
+class PlugEuropeu {
+  -- Métodos --
+  + conectarNaTomadaEuropeia(): void
+}
+
+' 3. Classe Adapter (Adaptador)
+class AdapterEuropeuParaAmericano {
+  -- Atributos --
+  - plug: PlugEuropeu
+  -- Métodos --
+  + conectarNaTomadaAmericana(): void
+}
+
+' 4. Classe Cliente (Client)
+class Main {
+    -- Métodos --
+    + main(args: String[]): void
+}
+
+' RELAÇÕES:
+
+' Implementação (Adapter implementa Target) - Linha tracejada com triângulo vazio
+AdapterEuropeuParaAmericano ..|> TomadaAmericana
+
+' Agregação 1:1 (Adapter contem o PlugEuropeu) - Losango Vazio (Agregação)
+AdapterEuropeuParaAmericano "1" o-- "1" PlugEuropeu
+
+' Dependência/Uso (Main usa o Target) - Linha tracejada com seta aberta, SEM RÓTULO
+Main .right.> TomadaAmericana
+
+@enduml

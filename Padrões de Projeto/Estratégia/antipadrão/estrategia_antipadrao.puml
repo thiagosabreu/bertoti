@@ -1,0 +1,31 @@
+@startuml
+title ❌ Anti-Padrão: Baixa Coesão (God Object) - Limpo
+
+' Configuração de estilo
+skinparam class {
+  BorderColor #cc0000
+  BackgroundColor white
+  AttributeFontColor black
+}
+skinparam backgroundcolor white
+
+' A classe com muitas responsabilidades (Baixa Coesão)
+class Confeitaria {
+  -- Métodos --
+  + fazerBolo(): void
+  + venderDoce(): void
+  + limparLoja(): void
+}
+
+' Cliente (Usa diretamente a classe inchada)
+class Main2 {
+    -- Métodos --
+    + main(args: String[]): void
+}
+
+' RELAÇÃO:
+
+' Dependência/Uso (Main2 usa a Confeitaria) - Linha tracejada com seta aberta
+Main2 .right.> Confeitaria
+
+@enduml
