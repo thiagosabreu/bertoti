@@ -1,31 +1,51 @@
 @startuml
-title ❌ Anti-Padrão: Baixa Coesão (God Object) - Limpo
+title ✔️ Padrão: Alta Coesão e Separação de Responsabilidades
 
 ' Configuração de estilo
 skinparam class {
-  BorderColor #cc0000
+  BorderColor #2e7d32
   BackgroundColor white
   AttributeFontColor black
 }
 skinparam backgroundcolor white
 
-' A classe com muitas responsabilidades (Baixa Coesão)
+' Serviços com responsabilidades coesas
+class BoloService {
+  + fazerBolo(): void
+}
+
+class VendasService {
+  + venderDoce(): void
+}
+
+class LimpezaService {
+  + limparLoja(): void
+}
+
+' Classe que orquestra (Alta Coesão + Delegação)
 class Confeitaria {
-  -- Métodos --
+  - boloService: BoloService
+  - vendasService: VendasService
+  - limpezaService: LimpezaService
+
   + fazerBolo(): void
   + venderDoce(): void
   + limparLoja(): void
 }
 
-' Cliente (Usa diretamente a classe inchada)
-class Main2 {
-    -- Métodos --
-    + main(args: String[]): void
+' Cliente
+class Cliente {
+  + realizarAtividade(): void
 }
 
-' RELAÇÃO:
+' RELAÇÕES:
 
-' Dependência/Uso (Main2 usa a Confeitaria) - Linha tracejada com seta aberta
-Main2 .right.> Confeitaria
+' Composição (Confeitaria depende dos serviços — ciclo de vida compartilhado)
+Confeitaria *-- BoloService
+Confeitaria *-- VendasService
+Confeitaria *-- LimpezaService
+
+' Cliente usa Confeitaria
+Cliente --> Confeitaria
 
 @enduml

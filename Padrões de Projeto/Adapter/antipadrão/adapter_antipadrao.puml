@@ -1,23 +1,16 @@
 @startuml
-' Removido o !theme toy para um visual mais neutro (sem cor de fundo)
+title Cenário Antí-Padrão - Falha de Acoplamento (Com Herança)
 
-title Cenário Antí-Padrão - Falha de Acoplamento
-
-' Configuração para deixar o fundo das caixas branco (ou neutro)
+' Configuração visual
 skinparam class {
   BorderColor #4078c0
-  BackgroundColor white ' Fundo branco
-  AttributeFontColor black
-}
-skinparam interface {
-  BorderColor #6cc644
-  BackgroundColor white ' Fundo branco
+  BackgroundColor white
   AttributeFontColor black
 }
 skinparam backgroundcolor white
 
-' 1. Interface (Target - Alvo)
-interface TomadaAmericana {
+' 1. Classe Base (antes era Interface)
+class TomadaAmericana {
   -- Métodos --
   + conectarNaTomadaAmericana(): void
 }
@@ -28,7 +21,7 @@ class PlugEuropeu {
   + conectarNaTomadaEuropeia(): void
 }
 
-' 3. Classe Adapter (A SOLUÇÃO correta - Contexto)
+' 3. Classe Adapter (Agora herda a classe alvo)
 class AdapterEuropeuParaAmericano {
   -- Atributos --
   - plug: PlugEuropeu
@@ -36,7 +29,7 @@ class AdapterEuropeuParaAmericano {
   + conectarNaTomadaAmericana(): void
 }
 
-' 4. Classe Cliente (O PROBLEMA - Acoplamento incorreto)
+' 4. Classe Cliente (O problema)
 class MainErrado {
     -- Métodos --
     + main(args: String[]): void
@@ -44,14 +37,13 @@ class MainErrado {
 
 ' RELAÇÕES:
 
-' Implementação (Adapter implementa Target) - Linha tracejada com triângulo vazio
-AdapterEuropeuParaAmericano ..|> TomadaAmericana
+' Herança (antes era implementação de interface)
+AdapterEuropeuParaAmericano --|> TomadaAmericana
 
-' Agregação 1:1 (Adapter contem o PlugEuropeu) - Losango Vazio (Agregação)
+' Agregação 1:1 (Adapter contém o PlugEuropeu)
 AdapterEuropeuParaAmericano "1" o-- "1" PlugEuropeu
 
-' Dependência/Uso (MainErrado usa o Adaptado diretamente) - Linha tracejada com seta aberta
-' Ajuste a direção para melhorar a disposição visual
+' Dependência incorreta (Cliente usa diretamente o PlugEuropeu)
 MainErrado .right.> PlugEuropeu
 
 @enduml

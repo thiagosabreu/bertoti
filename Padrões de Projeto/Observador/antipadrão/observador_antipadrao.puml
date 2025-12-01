@@ -35,10 +35,10 @@ class Notificacao {
 ' RELAÇÕES:
 
 ' Acoplamento Alto (NotifierBad depende diretamente dos Observadores)
-NotifierBad .down.> EmailService
-NotifierBad .down.> SmsService
+NotifierBad --> EmailService
+NotifierBad --> SmsService
 
 ' Dependência (Cliente usa o NotifierBad)
-Notificacao .right.> NotifierBad
+Notificacao --> NotifierBad
 
 @enduml

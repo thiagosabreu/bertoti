@@ -16,6 +16,7 @@ class Menu {
   # itens : List<Item>
   -- Métodos --
   + adicionar(item)
+  + adicionar(item)
 }
 
 class PratoComposto {

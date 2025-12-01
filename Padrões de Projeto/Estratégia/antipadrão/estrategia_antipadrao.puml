@@ -1,5 +1,5 @@
 @startuml
-title ❌ Anti-Padrão: Baixa Coesão (God Object) - Limpo
+title ❌ Anti-Padrão: Baixa Coesão (God Object) - Com Herança
 
 ' Configuração de estilo
 skinparam class {
@@ -9,7 +9,13 @@ skinparam class {
 }
 skinparam backgroundcolor white
 
-' A classe com muitas responsabilidades (Baixa Coesão)
+' Classe base
+class Loja {
+  -- Métodos --
+  + limparLoja(): void
+}
+
+' Classe filha com responsabilidades demais (God Object)
 class Confeitaria {
   -- Métodos --
   + fazerBolo(): void
@@ -17,15 +23,7 @@ class Confeitaria {
   + limparLoja(): void
 }
 
-' Cliente (Usa diretamente a classe inchada)
-class Main2 {
-    -- Métodos --
-    + main(args: String[]): void
-}
-
-' RELAÇÃO:
-
-' Dependência/Uso (Main2 usa a Confeitaria) - Linha tracejada com seta aberta
-Main2 .right.> Confeitaria
+' Herança (Confeitaria herda Loja)
+Confeitaria --|> Loja
 
 @enduml
