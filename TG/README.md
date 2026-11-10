@@ -1,10 +1,3 @@
-<!--
-  GUIA DE PREENCHIMENTO (este bloco não aparece no GitHub)
-  - Procure por "//TODO" (Ctrl + F): cada ocorrência é algo que você precisa preencher ou revisar.
-    Troque o [//TODO: ...] pelo conteúdo real e apague os colchetes.
-  - Apague este bloco quando terminar.
--->
-
 <h2>Sobre mim</h2>
 
 <p align="center"><img src="./assets/thiago.jpeg" width="20%" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; display: block; margin: 0 auto;"></p>
@@ -22,8 +15,6 @@ Atualmente trabalho há um ano e meio como Desenvolvedor .NET na TOTVS, atuando 
 * [LinkedIn](https://www.linkedin.com/in/thiagosabreu/)
 
 ## Meus Principais Conhecimentos
-
-<!-- //TODO: revise os badges abaixo; mantenha só as tecnologias que você domina e acrescente as que faltarem. -->
 
 **Backend**
 
@@ -145,8 +136,6 @@ export function hexadecimalParaBinario(hexadecimal: string): string {
 
 #### Hard Skills
 
-<!-- //TODO (opcional): os níveis foram sugeridos a partir dos seus commits; revise se quiser. -->
-
 - **Lógica de programação**: Sei fazer com autonomia
 - **Portugol / Visualg**: Sei fazer com autonomia
 - **TypeScript**: Sei fazer com autonomia
@@ -249,8 +238,6 @@ for (Criterios criterio : criteriosList) {
 
 #### Hard Skills
 
-<!-- //TODO (opcional): os níveis foram sugeridos a partir dos seus commits; revise se quiser. -->
-
 - **Java / POO**: Sei fazer com autonomia
 - **JavaFX**: Sei fazer com autonomia
 - **SQL / MySQL**: Sei fazer com autonomia
@@ -346,8 +333,6 @@ public ResponseEntity<List<RegistroPontoResponseDto>> buscarRegistrosDetalhados(
 </details>
 
 #### Hard Skills
-
-<!-- //TODO (opcional): os níveis foram sugeridos a partir dos seus commits; revise se quiser. -->
 
 - **Java**: Sei fazer com autonomia
 - **Spring Boot / Spring Security**: Sei fazer com autonomia
@@ -461,8 +446,6 @@ private Double calcularExcessoVelocidadeComRegistros(List<RegistroVelocidade> re
 
 #### Hard Skills
 
-<!-- //TODO (opcional): os níveis foram sugeridos a partir dos seus commits; revise se quiser. -->
-
 - **Java / Spring Boot**: Sei fazer com autonomia
 - **Spring Security / JWT**: Sei fazer com autonomia
 - **Oracle / PL-SQL**: Sei fazer com autonomia
@@ -573,8 +556,6 @@ public WarehouseMetrics(IMeterFactory meterFactory)
 </details>
 
 #### Hard Skills
-
-<!-- //TODO (opcional): os níveis foram sugeridos a partir dos seus commits; revise se quiser. -->
 
 - **C# / .NET**: Sei fazer com autonomia
 - **Testes automatizados (TDD, xUnit, Moq)**: Sei fazer com autonomia
