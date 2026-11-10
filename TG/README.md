@@ -2,21 +2,20 @@
   GUIA DE PREENCHIMENTO (este bloco não aparece no GitHub)
   - Procure por "//TODO" (Ctrl + F): cada ocorrência é algo que você precisa preencher ou revisar.
     Troque o [//TODO: ...] pelo conteúdo real e apague os colchetes.
-  - Coloque a sua foto em TG/assets/ e ajuste o nome do arquivo na tag <img> abaixo.
   - Apague este bloco quando terminar.
 -->
 
 <h2>Sobre mim</h2>
 
-<p align="center"><img src="./assets/[//TODO-sua-foto].jpeg" width="20%" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; display: block; margin: 0 auto;"></p>
+<p align="center"><img src="./assets/thiago.jpeg" width="20%" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; display: block; margin: 0 auto;"></p>
 
-Meu nome é [//TODO: seu nome completo], sou estudante de Banco de Dados na FATEC São José dos Campos e atualmente estou no [//TODO: semestre] semestre do curso, com previsão de formatura em [//TODO: ano].
+Meu nome é Thiago Abreu, sou estudante de Banco de Dados na FATEC São José dos Campos e atualmente estou no quinto semestre do curso.
 
-[//TODO: como e quando começou seu interesse por tecnologia / seu primeiro contato com programação.]
+Meu primeiro contato com programação aconteceu em 2022, durante uma oportunidade como Jovem Aprendiz na Embraer, onde dei meus primeiros passos na área de tecnologia e decidi seguir essa carreira.
 
-[//TODO: sua trajetória até aqui: em que área você se desenvolveu, que tipo de problema gosta de resolver, se é mais backend, frontend ou dados.]
+Desde então, venho me desenvolvendo principalmente no backend, construindo APIs, regras de negócio e integrações com bancos de dados. Gosto de construir aplicações sólidas e confiáveis, e acredito que não existe tecnologia coringa: cada uma tem a sua aplicação certa.
 
-Atualmente trabalho como [//TODO: cargo] na [//TODO: empresa], atuando principalmente com [//TODO: tecnologias do dia a dia]. Além disso, [//TODO: o que você estuda ou pratica fora do trabalho e o que busca evoluir].
+Atualmente trabalho há um ano e meio como Desenvolvedor .NET na TOTVS, atuando principalmente com .NET, Angular e T-SQL. Além disso, sigo estudando arquitetura de backend e observabilidade, áreas que venho aprofundando nos projetos da faculdade.
 
 ## Contatos
 * [GitHub](https://github.com/thiagosabreu)
